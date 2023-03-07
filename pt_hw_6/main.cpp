@@ -1,4 +1,5 @@
 #include "Tovar.h"
+#include "House.h"
 
 void main()
 {
@@ -8,6 +9,19 @@ void main()
     char key = ' ';
     bool key_1 = 1;
     int num = 0, num1 = 0, num2=0;
+
+    CompositeHouse* house = new CompositeHouse;
+
+    house->addObj(CreatHouse1());
+    cout << "Сумма постройки дома "<< house->getSum() << " рублей" << endl;
+    system("pause");
+    house->ClearH();
+    house->addObj(MyHouse());
+    cout << "Сумма постройки дома " << house->getSum() << " рублей" << endl;
+    system("pause");
+    // …
+    delete house;
+
     vector <Tovar> t1
     { 
         Milk("Молоко", "литр", 45.58),
